@@ -84,31 +84,31 @@ public class Cromosoma extends Individuo {
 
         //Condiciones que se deben cumplir
 
-        //Si la persona es matemático y no musico, se le sumarán 10 puntos al valor de la aptitud.
+        //Si la persona es matemático y no musico, se le sumarán 30 puntos al valor de la aptitud.
         if ((oficiosJuan.contains(Oficios.MATEMATICO) && !oficiosJuan.contains(Oficios.MUSICO))
             || (oficiosJaime.contains(Oficios.MATEMATICO) && !oficiosJaime.contains(Oficios.MUSICO))
             || (oficiosJose.contains(Oficios.MATEMATICO) && !oficiosJose.contains(Oficios.MUSICO)))
                 total += 30;
 
-        //Si la persona es musico y no jardinero, se le sumaran 10 puntos al valor de la aptitud.
+        //Si la persona es musico y no jardinero, se le sumaran 30 puntos al valor de la aptitud.
         if (oficiosJuan.contains(Oficios.MUSICO) && !oficiosJuan.contains(Oficios.JARDINERO)
             || (oficiosJaime.contains(Oficios.MUSICO) && !oficiosJaime.contains(Oficios.JARDINERO))
             || (oficiosJose.contains(Oficios.MUSICO) && !oficiosJose.contains(Oficios.JARDINERO)))
                 total += 30;
 
-        //Si la persona es pintor y no músico, se le sumaran 10 puntos al valor de la aptitud.
+        //Si la persona es pintor y no músico, se le sumaran 30 puntos al valor de la aptitud.
         if (oficiosJuan.contains(Oficios.PINTOR) && !oficiosJuan.contains(Oficios.MUSICO)
             || (oficiosJaime.contains(Oficios.PINTOR) && !oficiosJaime.contains(Oficios.MUSICO))
             || (oficiosJose.contains(Oficios.PINTOR) && !oficiosJose.contains(Oficios.MUSICO)))
                 total += 30;
 
-        //Si la persona es matematico y no pintor, se le sumaran 10 puntos al valor de la aptitud.
+        //Si la persona es matematico y no pintor, se le sumaran 30 puntos al valor de la aptitud.
         if (oficiosJuan.contains(Oficios.MATEMATICO) && !oficiosJuan.contains(Oficios.PINTOR)
             || (oficiosJaime.contains(Oficios.MATEMATICO) && !oficiosJaime.contains(Oficios.PINTOR))
             || (oficiosJose.contains(Oficios.MATEMATICO) && !oficiosJose.contains(Oficios.PINTOR)))
                 total += 30;
 
-        //Si la persona es jardinero y no poeta, se le sumarán 10 puntos al valor de la aptitud.
+        //Si la persona es jardinero y no poeta, se le sumarán 30 puntos al valor de la aptitud.
         if (oficiosJuan.contains(Oficios.JARDINERO) && !oficiosJuan.contains(Oficios.POETA)
             || (oficiosJaime.contains(Oficios.JARDINERO) && !oficiosJaime.contains(Oficios.POETA))
             || (oficiosJose.contains(Oficios.JARDINERO) && !oficiosJose.contains(Oficios.POETA)))
@@ -185,7 +185,7 @@ public class Cromosoma extends Individuo {
         //--------------------
         //Combinaciones invalidas
 
-        //Ninguna de las personas pueden tener dos trabajos iguales, en tal caso, se le restarán 100 puntos al valor de la aptitud.
+        //Ninguna de las personas pueden tener dos trabajos iguales, en tal caso, se le restarán 1000 puntos al valor de la aptitud.
         Set<Integer> setJuan = new HashSet<>(oficiosJuan);
         setJuan.add(this.juanTrabajo1);
         setJuan.add(this.juanTrabajo2);
@@ -202,7 +202,7 @@ public class Cromosoma extends Individuo {
         if (setJuan.size() < 2 || setJose.size() < 2 || setJaime.size() < 2)
             total -= 1000;
 
-        //Si un oficio, aparece en mas de una persona, se le restaràn 20 puntos al valor de la aptitud.
+        //Si un oficio, aparece en mas de una persona, se le restaràn 1000 puntos al valor de la aptitud.
         Set<Integer> todosLosOficions = new HashSet<>(6);
         todosLosOficions.addAll(oficiosJaime);
         todosLosOficions.addAll(oficiosJuan);

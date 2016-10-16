@@ -47,8 +47,8 @@ public class AlgoritmoGenetico {
 	public Individuo ejecutar() {
 		
 		this.generarPoblacionInicial(individuoClass);
-		
-		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(Level.FINE, "Población inicial");
+
+		Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(Level.FINE, "Población inicial ");
 		
 		for (Individuo individuo : this.individuos) {
 			Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(Level.FINE, individuo.toString());
